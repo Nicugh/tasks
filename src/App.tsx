@@ -10,7 +10,7 @@ function App(): React.JSX.Element {
             <p>
                 {/* Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. */}
-                Now by Nicholas M,
+                Hello World Now by Nicholas M,
             </p>
         </div>
     );
