@@ -17,10 +17,10 @@ export function add3(first: number, second: number, third: number): number {
         num = num + first;
     }
     if (second > 0) {
-        num = num + first;
+        num = num + second;
     }
     if (third > 0) {
-        num = num + first;
+        num = num + third;
     }
     return num;
 }
@@ -30,7 +30,7 @@ export function add3(first: number, second: number, third: number): number {
  * mark added to the end.
  */
 export function shout(message: string): string {
-    return message.toUpperCase + "!";
+    return message.toUpperCase() + "!";
 }
 
 /**
@@ -38,7 +38,7 @@ export function shout(message: string): string {
  * mark. Do not use an `if` statement in solving this question.
  */
 export function isQuestion(message: string): boolean {
-    return message.includes("?");
+    return message.endsWith("?");
 }
 
 /**
