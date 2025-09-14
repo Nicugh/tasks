@@ -5,12 +5,13 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    let begin: number = numbers[0];
-    let end: number = numbers[numbers.length - 1];
-    let eAL: number[] = [];
-    eAL.push(begin);
-    eAL.push(end);
-    return eAL;
+    if (numbers.length === 0) {
+        return [];
+    }
+    if (numbers.length === 1) {
+        return [numbers[0], numbers[0]];
+    }
+    return [numbers[0], numbers[numbers.length - 1]];
 }
 
 /**
@@ -95,11 +96,11 @@ export function makeMath(addends: number[]): string {
     if (addends.length === 0) {
         return "0=0";
     }
-    let sum: number[];
+    let sum: number;
     sum = addends.reduce((acc, num) => acc + num, 0);
     let expression: string;
     expression = addends.join("+");
-    return "${sum}=${expression}";
+    return sum.toString() + "=" + expression;
 }
 
 /**
@@ -112,5 +113,19 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    const firstNegIndex = values.findIndex((v) => v < 0);
+
+    if (firstNegIndex === -1) {
+        const sum = values.reduce((acc, val) => acc + val, 0);
+        return [...values, sum];
+    }
+
+    const sumBeforeNeg = values
+        .slice(0, firstNegIndex)
+        .reduce((acc, val) => acc + val, 0);
+    return [
+        ...values.slice(0, firstNegIndex + 1),
+        sumBeforeNeg,
+        ...values.slice(firstNegIndex + 1),
+    ];
 }
