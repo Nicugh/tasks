@@ -28,12 +28,15 @@ function App(): React.JSX.Element {
                 {/* Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. */}
                 <img src={logo} alt="An awesome picture of a crab" />
-                <ul>
-                    <li>Crabs are neat</li>
-                    <li>Crabs are really neat</li>
-                    <li>Crabs are strong</li>
-                    <li>Crabs are the future</li>
-                </ul>
+            </p>
+            <ul>
+                <li>Crabs are neat</li>
+                <li>Crabs are really neat</li>
+                <li>Crabs are strong</li>
+                <li>Crabs are quite strong indeed</li>
+                <li>Crabs are the future</li>
+            </ul>
+            <p>
                 <Button
                     onClick={() => {
                         console.log("Hello World!");
@@ -53,8 +56,6 @@ function App(): React.JSX.Element {
                 options={["a", "b", "c"]}
                 expectedAnswer="b"
             ></MultipleChoiceQuestion>
-            <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
