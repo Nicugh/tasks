@@ -2,6 +2,12 @@ import React from "react";
 import "./App.css";
 import logo from "./Assests/Crab.jpg"; // with import
 import { Button } from "react-bootstrap";
+
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { TwoDice } from "./components/TwoDice";
+import { Counter } from "./components/Counter";
+
 function App(): React.JSX.Element {
     return (
         <div className="App">
@@ -30,6 +36,14 @@ function App(): React.JSX.Element {
                 </ul>
                 Hello World Now by Nicholas M,
             </p>
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
         </div>
     );
 }
