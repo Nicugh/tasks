@@ -89,10 +89,14 @@ export function addNewQuestion(
 
 /***
  * Consumes an array of Questions and produces a new array of Questions, where all
+<<<<<<< HEAD
+ * the Questions are the same EXCEPT for the one with the given `targetId`.
+=======
  * the Questions are the same EXCEPT for the one with the given `targetId`. That
  * Question should be the same EXCEPT that its name should now be `newName`.
  * Hint: as usual, do not modify the input questions array,
  *       to make a new copy of a question with some changes, use the ... operator
+>>>>>>> upstream/task-state
  */
 export function renameQuestionById(
     questions: Question[],
@@ -106,6 +110,7 @@ export function renameQuestionById(
 
 /**
  * Consumes an array of Questions and produces a new array of Questions, where all
+ * the Questions are the same EXCEPT for the one with the given `targetId`.
  * the Questions are the same EXCEPT for the one with the given `targetId`. That
  * Question should be the same EXCEPT that its `option` array should have a new element.
  * If the `targetOptionIndex` is -1, the `newOption` should be added to the end of the list.
@@ -122,5 +127,21 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string,
 ): Question[] {
-    return [];
+    return questions.map((q) => {
+        if (q.id !== targetId) {
+            return q;
+        }
+
+        const newOptions =
+            targetOptionIndex === -1 ?
+                [...q.options, newOption]
+            :   q.options.map((opt, index) =>
+                    index === targetOptionIndex ? newOption : opt,
+                );
+
+        return {
+            ...q,
+            options: newOptions,
+        };
+    });
 }

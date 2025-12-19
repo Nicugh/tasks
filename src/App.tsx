@@ -27,20 +27,21 @@ function App(): React.JSX.Element {
                 <img src={logo} alt="An awesome picture of a crab" />
                 <ul>
                     <li>Crabs are neat</li>
+                    <li>Crabs are really neat</li>
                     <li>Crabs are strong</li>
                     <li>Crabs are the future</li>
-                    <Button
-                        onClick={() => {
-                            console.log("Hello World!");
-                        }}
-                    >
-                        Log Hello World
-                    </Button>
                 </ul>
+                <Button
+                    onClick={() => {
+                        console.log("Hello World!");
+                    }}
+                >
+                    Log Hello World
+                </Button>
                 Hello World Now by Nicholas M,
             </p>
             <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
+            {<DoubleHalf></DoubleHalf>}
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
